@@ -22,7 +22,7 @@ export default function weatherDisplay({weather, geoTime}) {
             {typeof weather.main !== "undefined" ? (
               <>
                 <hr className="title-line my-4 mx-auto"/>
-                <div className="display-data flex gap-10 justify-center flex-wrap text-center">
+                <div className="display-data flex gap-6 justify-center flex-wrap text-center">
                   <div className="animate__animated animate__fadeInUp">
                     <span>
                       <h4 className="datetime">Current Date and Time</h4>

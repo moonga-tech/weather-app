@@ -65,6 +65,7 @@ body {
     text-transform: uppercase;
     color: var(--tmp-color);
     font-size: 20px;
+    font-weight: 600;
 }
 .display-data .datetime {
     font-size: 13px;
@@ -89,4 +90,11 @@ footer {
 .school-link ul {
     display: flex;
     justify-content: space-evenly;
+    margin: 15px 0;
+    color: #006eff;
+}
+.school-link a:hover {
+    text-decoration: underline;
+    color: var(--tmp-color);
+    transition: .3s linear;
 }

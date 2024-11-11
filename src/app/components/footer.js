@@ -5,13 +5,14 @@ export default function Footer() {
                 <section>
                     <div className="school-link">
                         <ul>
-                            <li><a href="http://www.icuzambia.net" >ICU Zambia</a></li>
-                            <li><a href="https://www.zrdc.org">ZRDC</a></li>
+                            <li><a href="http://www.icuzambia.net" target="_blank">ICU Zambia</a></li>
+                            <li><a href="https://www.zrdc.org" target="_blank">ZRDC</a></li>
                         </ul>
                     </div>
                     <div className='copyright'>
                         <span>
-                            <p>Ward: Kariba Ward</p>
+                            <p className="ward">Ward: Kariba Ward</p>
+                            <br />
                             <p>All Rights Reserved. Designed and Maintained by Alex Sitwala, SIN: 2304259224</p>
                         </span>
                     </div>
