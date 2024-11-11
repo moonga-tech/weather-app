@@ -1,3 +1,5 @@
+import moment from "moment";
+
 import Image from "next/image";
 import Humidity from "../images/humidity.png"
 import WindSpeed from "../images/storm.png"
@@ -8,7 +10,7 @@ import Clear from "../images/clear.png"
 import Cloud from "../images/cloud.png"
 
 
-export default function weatherDisplay({weather, geoTime}) {
+export default function weatherDisplay({weather, geoTime, forecast}) {
 
     return (
         <>
@@ -78,7 +80,20 @@ export default function weatherDisplay({weather, geoTime}) {
 
                 {/* 5 day forecase - display weather condition in 5 days time */}
                 <div className="5day-forcest">
-                  5 
+                {forecast.list && (
+                  <div className="forecast-div flex gap-5 text-center flex-wrap justify-center text-1xl w-full my-3">
+                    {forecast.list.slice(0, 40).filter((_, index) => index % 8 === 0).map((day, index) => (
+                      <div key={index} className="border-slate-300 border-2 ">
+                        <h2>{moment.unix(day.dt).format('dddd')}</h2>
+                        <p>High: {day.main.temp_max}°C</p>
+                        <p>Low: {day.main.temp_min}°C</p>
+                        <p>Conditions: {day.weather[0].description}</p>
+                        <p>Precipitation: {day.pop}%</p>
+                        <p>Wind: {day.wind.speed} m/s</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 </div>
               </>
             ) : weather.message ? (

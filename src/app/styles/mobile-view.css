@@ -20,6 +20,11 @@
     footer {
         padding: 0 10px;
     }
+    .school-link ul {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px;
+    }
     footer .ward {
         font-size: 1.4em;
     }

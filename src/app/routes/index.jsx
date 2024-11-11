@@ -27,8 +27,10 @@ export default function Index() {
 
   /* saved fetched data for weather */
   const [weather, setWeather] = useState("");
+  /* fetched data for forecast weather */
+  const [forecast, setForecast] = useState("")
 
-  /*  */
+  /* fetched geolocation data */
   const [geoTime, setGeoTime] = useState("");
 
   /* click to search for weather location */
@@ -39,9 +41,10 @@ export default function Index() {
       setWeather(responseData);
     }).catch(err => swal ( "Oops" ,  "Something went wrong! - Check your internet connection" ,  "error" ));
     
-    /* fetch(`${apis.weatherURL}/forecast?q=${search}&lat=33.44&lon=-94.04&exclude=current,hourly,minutely,daily&units=metric&appid=${apis.weatherKey}`).then(forecast => forecast.json()).then(forecastData => {
-      console.log(forecastData.current.daily.dt)
-    }) */
+    fetch(`${apis.weatherURL}/forecast?q=${search}&lat=33.44&lon=-94.04&exclude=current,hourly,minutely,daily&units=metric&appid=${apis.weatherKey}`).then(forecast => forecast.json()).then(forecastData => {
+      setForecast(forecastData);
+      console.log(forecastData);
+    })
     fetch(`${apis.geoTime}${apis.geoKey}&location=${search}`).then(response => response.json()).then(resData => {
      setGeoTime(resData);
     }).catch(err => console.log("err"))
@@ -63,7 +66,7 @@ export default function Index() {
           </div>
           
           {/* display weather data */}
-          <WeatherDisplay weather={weather} geoTime={geoTime} />
+          <WeatherDisplay weather={weather} geoTime={geoTime} forecast={forecast} />
           {/* footer */}
           <Footer />
         </div>

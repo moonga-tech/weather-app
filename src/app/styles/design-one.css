@@ -89,6 +89,7 @@ footer {
 }
 .school-link ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 15px 0;
     color: #006eff;
