@@ -1,0 +1,16 @@
+
+@media screen and (max-width: 800px) {
+    .search-form {
+        flex-wrap: wrap;
+        width: 70%;
+    }
+    .search-form input {
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    .search-form button {
+        width: 40%;
+        margin: 0 auto;
+    }
+}

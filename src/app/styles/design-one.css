@@ -1,0 +1,92 @@
+@import "https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900";
+@import "https://fonts.googleapis.com/css?family=Arbutus Slab:100,200,300,400,500,600,700,800,900";     
+
+:root {
+    --first-color: #191b20;
+    --tmp-color: rgb(230, 208, 12);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: inter;
+    font-size: 16px;
+    animation: fadeIn .4s ease-in-out;
+}
+@keyframes fadeIn {
+    0% {background-color: red;}
+    100% {background-color: yellow;}
+}
+.App {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--first-color);
+    background-image: url(../images/4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    min-height: 100vh;
+    color: white;
+    animation: fadeIn 2s ease-out;
+}
+
+.App h1 {
+    margin-top: 1.5em;
+}
+.search-form {
+    margin: 1.5em auto;
+    width: 40%;
+    display: flex;
+}
+.search-form input {
+    background-color: transparent;
+}
+.display {
+    background-color: rgba(3, 48, 100, .2);
+    border: none;
+    padding: 10px 0;
+}
+.title-line {
+    width: 10%;
+    border: 1px solid rgb(255, 230, 0);
+    border-radius: 20px;
+}
+.display-data div {
+    border: 1px solid rgb(201, 201, 201);
+    width: 14em;
+    padding: .7em;
+    border-radius: 7px;
+    margin: 0 10px;
+}
+.display-data div h4 {
+    text-transform: uppercase;
+    color: var(--tmp-color);
+    font-size: 20px;
+}
+.display-data .datetime {
+    font-size: 13px;
+}
+.display-data .timezone {
+    text-transform: capitalize;
+}
+.temp-div .temp-icon {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    top: 10px;
+}
+.school-link ul {
+    display: flex;
+    justify-content: space-evenly;
+}
