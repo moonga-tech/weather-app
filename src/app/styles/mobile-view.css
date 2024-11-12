@@ -17,6 +17,9 @@
         width: 40%;
         margin: 0 auto;
     }
+    .day-forcast h1 {
+        font-size: 2em;
+    }
     footer {
         padding: 0 10px;
     }

@@ -4,6 +4,7 @@ export default function Footer() {
             <footer>
                 <section>
                     <div className="school-link">
+                        <h1 className="text-yellow-400">School Research</h1>
                         <ul>
                             <li><a href="http://www.icuzambia.net" target="_blank">ICU Zambia</a></li>
                             <li><a href="https://www.zrdc.org" target="_blank">ZRDC</a></li>

@@ -8,6 +8,7 @@ import WindSpeed from "../images/storm.png"
 import Rain from "../images/rain-1.png"
 import Clear from "../images/clear.png"
 import Cloud from "../images/cloud.png"
+import Precipt from "../images/precipitation.png"
 
 
 export default function weatherDisplay({weather, geoTime, forecast}) {
@@ -79,17 +80,28 @@ export default function weatherDisplay({weather, geoTime, forecast}) {
                 </div>
 
                 {/* 5 day forecase - display weather condition in 5 days time */}
-                <div className="5day-forcest">
+                <div className="day-forcast">
+                <div>
+                  <h1 className="text-center 5day">5Day Wether Forecast</h1>
+                </div>
                 {forecast.list && (
                   <div className="forecast-div flex gap-5 text-center flex-wrap justify-center text-1xl w-full my-3">
                     {forecast.list.slice(0, 40).filter((_, index) => index % 8 === 0).map((day, index) => (
-                      <div key={index} className="border-slate-300 border-2 ">
-                        <h2>{moment.unix(day.dt).format('dddd')}</h2>
-                        <p>High: {day.main.temp_max}°C</p>
-                        <p>Low: {day.main.temp_min}°C</p>
-                        <p>Conditions: {day.weather[0].description}</p>
-                        <p>Precipitation: {day.pop}%</p>
-                        <p>Wind: {day.wind.speed} m/s</p>
+                      <div key={index} className="border-slate-500 border-2 rounded-xl w-50 px-2">
+                        <h2 className="text-2xl">{moment.unix(day.dt).format('dddd')}</h2>
+                        <div className="flex my-2 justify-evenly">
+                          <p>High: {day.main.temp_max}°C</p>
+                          <p>Low: {day.main.temp_min}°C</p>
+                        </div>
+                        <p>Conditions - ({day.weather[0].description})</p>
+                        <div className="flex justify-evenly my-2">
+                          <p>Precipitation <br />{day.pop}%</p>
+                          <Image src={Precipt} width={40} height={20} alt="weather-icon" className="img-fluid" />
+                        </div>
+                        <div className="flex justify-evenly flex-row-reverse items-center mb-1">
+                          <p>Wind: {day.wind.speed} m/s</p>
+                          <Image src={WindSpeed} width={30} height={20} alt="weather-icon" className="img-fluid" />
+                        </div>
                       </div>
                     ))}
                   </div>
