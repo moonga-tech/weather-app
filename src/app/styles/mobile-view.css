@@ -1,8 +1,8 @@
 
 @media screen and (max-width: 800px) {
     .App h1 {
-        font-size: 2.5em;
-        margin: 1.5em .8em 0 .8em;
+        font-size: 2em;
+        width: 100%;
     }
     .search-form {
         flex-wrap: wrap;
@@ -16,6 +16,12 @@
     .search-form button {
         width: 40%;
         margin: 0 auto;
+    }
+    .location-name {
+        padding: 0 10px;
+    }
+    .location-name span {
+        font-size: 2em;
     }
     .day-forcast h1 {
         font-size: 2em;

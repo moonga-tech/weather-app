@@ -15,10 +15,7 @@ body {
     font-size: 16px;
     animation: fadeIn .4s ease-in-out;
 }
-@keyframes fadeIn {
-    0% {background-color: red;}
-    100% {background-color: yellow;}
-}
+
 .App {
     display: flex;
     flex-direction: column;
@@ -37,13 +34,15 @@ body {
     margin-top: 1.5em;
 }
 .search-form {
-    margin: 1.5em auto;
+    margin: 2em auto;
     width: 40%;
     display: flex;
 }
 .search-form input {
     background-color: transparent;
+    margin-right: 20px;
 }
+
 .display {
     background-color: rgba(3, 48, 100, .2);
     border: none;
@@ -79,7 +78,10 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-
+.wind {
+    color: white; 
+}
+/* footer */
 footer {
     position: relative;
     bottom: 0;

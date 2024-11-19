@@ -2,17 +2,20 @@ import moment from "moment";
 
 import Image from "next/image";
 import Humidity from "../images/humidity.png"
-import WindSpeed from "../images/storm.png"
+import WindSpeed from "../images/wind.png"
 
 
 import Rain from "../images/rain-1.png"
 import Clear from "../images/clear.png"
 import Cloud from "../images/cloud.png"
 import Precipt from "../images/precipitation.png"
+/* temperature images - low or high*/
+import TempHigh from "../images/temp-high.png"
+import TempLow from "../images/temp-low.png"
 
 
-export default function weatherDisplay({weather, geoTime, forecast}) {
 
+export default function weatherDisplay({weather, geoTime, forecast, search}) {
     return (
         <>
           <div className="display">
@@ -56,6 +59,9 @@ export default function weatherDisplay({weather, geoTime, forecast}) {
                         <h2 className="text-2xl temp">{weather.main.temp} <sup>o</sup>C</h2>                  
                       </section>
                     <p>( Feels Like {weather.main.feels_like}  <sup>o</sup>C )</p>
+                    <span className="flex justify-center my-1">
+                      <Image src={TempHigh} width={50} height={50} alt="weather-icon" />
+                    </span>
                   </div>
 
                   {/* humidity */}
@@ -79,10 +85,10 @@ export default function weatherDisplay({weather, geoTime, forecast}) {
                   </div>
                 </div>
 
-                {/* 5 day forecase - display weather condition in 5 days time */}
+                {/* 5 day forecast - display weather condition in 5 days time */}
                 <div className="day-forcast">
                 <div>
-                  <h1 className="text-center 5day">5Day Wether Forecast</h1>
+                  <h1 className="text-center 5day">5 Day Weather Forecast</h1>
                 </div>
                 {forecast.list && (
                   <div className="forecast-div flex gap-5 text-center flex-wrap justify-center text-1xl w-full my-3">
@@ -100,7 +106,7 @@ export default function weatherDisplay({weather, geoTime, forecast}) {
                         </div>
                         <div className="flex justify-evenly flex-row-reverse items-center mb-1">
                           <p>Wind: {day.wind.speed} m/s</p>
-                          <Image src={WindSpeed} width={30} height={20} alt="weather-icon" className="img-fluid" />
+                          <Image src={WindSpeed} width={50} height={20} alt="weather-icon" className="img-fluid wind" />
                         </div>
                       </div>
                     ))}
@@ -108,13 +114,18 @@ export default function weatherDisplay({weather, geoTime, forecast}) {
                 )}
                 </div>
               </>
+              /* error if city not found */
+            ) : search == "" ? (
+              <div className="location-name text-center my-5">
+                <span className="my-0 mx-auto text-4xl animate__animated animate__fadeInRight">Enter a City or Town</span>
+              </div> 
             ) : weather.message ? (
-              <p>{weather.message}</p>
+                <p className="animate__animated animate__fadeInRight text-center capitalize text-6xl p-10 text-red-500">{weather.message}</p>
             ) : ( 
               
-            /* if no city has been inputed */
+            /* if no city has been entered in the input */
             <div className="location-name text-center my-5">
-              <span className="my-0 mx-auto text-4xl animate__animated animate__fadeInRight">Enter a city</span>
+              <span className="my-0 mx-auto text-4xl animate__animated animate__fadeInRight">Enter a City or Town</span>
             </div> )
             }
           </div>
