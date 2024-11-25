@@ -1,3 +1,5 @@
+'use client'
+
 import Index from "./pages/index"
 import Head from "next/head";
 

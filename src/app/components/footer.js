@@ -4,8 +4,8 @@ export default function Footer() {
             <footer>
                 <section>
                     <div className="school-link">
-                        <h1 className="text-yellow-400">School Research and Faculty</h1>
-                        <ul>
+                        <h1 className="text-yellow-400 text-4xl font-bold">School Research and Faculty</h1>
+                        <ul className="font-bold">
                             <li><a href="http://www.icuzambia.net" target="_blank">ICU Zambia</a></li>
                             <li><a href="https://www.zrdc.org" target="_blank">ZRDC</a></li>
                         </ul>

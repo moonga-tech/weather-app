@@ -1,0 +1,30 @@
+:root {
+    --first-color: #191b20;
+    --tmp-color: rgb(230, 208, 12);
+}
+.img1 {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--first-color);
+    background-image: url(../images/1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    min-height: 100vh;
+    color: white;
+    animation: fadeIn 2s ease-out;
+}
+.img2 {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--first-color);
+    background-image: url(../images/2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    min-height: 100vh;
+    color: white;
+    animation: fadeIn 2s ease-out;
+}
