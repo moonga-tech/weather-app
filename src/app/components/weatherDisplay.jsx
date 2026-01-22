@@ -22,7 +22,7 @@ export default function weatherDisplay({weather, geoTime, forecast, search}) {
       <div className="display">
         {/* location name */}
         <div className="location-name text-center animate__animated animate__fadeInRight">
-          <span className="my-0 mx-auto text-4xl font-bold">{weather.name}</span>
+          <span className="my-0 mx-auto text-4xl font-bold text-gray-200">{weather.name}</span>
         </div>
 
         {/* if weather.main is undefined */}
@@ -45,7 +45,7 @@ export default function weatherDisplay({weather, geoTime, forecast, search}) {
               <div className="temp-div animate__animated animate__fadeInLeft">
                 <h4>temp</h4>
                   <section className="temp-icon">
-                    <section className="text-center icon">
+                    <section className="text-center icon text-gray-200">
                       {/* <Image src={`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`} width={50} height={50} alt="weather-icon" /> */}
                       {
                         weather.weather[0].main == "Clear" ? (
@@ -104,7 +104,7 @@ export default function weatherDisplay({weather, geoTime, forecast, search}) {
             </div>
             <hr className="title-line my-4 mx-auto"/>
             {forecast.list && (
-              <div className="forecast-div flex gap-5 text-center flex-wrap justify-center text-1xl w-full my-3">
+              <div className="forecast-div flex gap-5 text-center flex-wrap justify-center text-1xl w-full my-3 text-gray-300">
                 {forecast.list.slice(0, 40).filter((_, index) => index % 8 === 0).map((day, index) => (
                   <div key={index} className="border-slate-500 border-2 rounded-xl w-50 px-2 py-2">
                     <h2 className="text-2xl text-sky-300">{moment.unix(day.dt).format('dddd')}</h2>
@@ -138,7 +138,7 @@ export default function weatherDisplay({weather, geoTime, forecast, search}) {
           
         /* if no city has been entered in the input */
         <div className="location-name text-center my-5">
-          <span className="my-0 mx-auto text-4xl animate__animated animate__fadeInRight">Enter a City or Town</span>
+          <span className="my-0 mx-auto text-4xl animate__animated animate__fadeInRight text-gray-200">Enter a City or Town</span>
         </div> )
         }
       </div>
